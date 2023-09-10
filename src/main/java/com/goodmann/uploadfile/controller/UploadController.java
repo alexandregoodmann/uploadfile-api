@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.goodmann.uploadfile.model.Agente;
 import com.goodmann.uploadfile.model.Agentes;
 import com.goodmann.uploadfile.model.RegiaoEnum;
 import com.goodmann.uploadfile.service.UploadService;
@@ -29,7 +30,7 @@ public class UploadController {
 	}
 
 	@GetMapping("/regiao/{sigla}")
-	public List<Agentes> findRegiao(@PathVariable(required = true, name = "sigla") RegiaoEnum sigla) {
+	public List<Agente> findRegiao(@PathVariable(required = true, name = "sigla") RegiaoEnum sigla) {
 		return this.uploadService.findRegiao(sigla);
 	}
 
